@@ -189,7 +189,7 @@ export default function HomePage() {
             </div>
             <div className="relative max-w-4xl mx-auto">
               <div className="absolute left-1/2 top-0 bottom-0 w-px timeline-line hidden md:block" />
-              <div className="space-y-24 relative">
+              <div className="space-y-16 relative">
                 {[
                   {
                     n: 1,
@@ -216,18 +216,17 @@ export default function HomePage() {
                 ].map((s) => (
                   <div
                     key={s.n}
-                    className={`flex flex-col ${s.reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-12 reveal`}
+                    className={`flex flex-col ${s.reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-6 md:gap-8 reveal`}
                   >
-                    <div className={`flex-1 ${s.reverse ? "text-left" : "md:text-right"}`}>
-                      <h4 className="text-headline-md text-primary mb-4">{s.title}</h4>
-                      <p className="text-body-md text-on-surface-variant">{s.body}</p>
-                    </div>
+                    <div className="flex-1 hidden md:block" />
                     <div className="relative z-10 w-12 h-12 bg-secondary rounded-full border-4 border-white shadow-xl flex items-center justify-center shrink-0">
                       <span className="text-white font-bold">{s.n}</span>
                     </div>
-                    <div className="flex-1 hidden md:block">
-                      <div className={`bg-white p-6 rounded-2xl shadow-lg border border-black/5 tilt-card ${s.reverse ? "flex justify-end" : ""}`}>
-                        <span className="material-symbols-outlined text-secondary text-4xl">{s.icon}</span>
+                    <div className="flex-1 w-full">
+                      <div className="bg-white p-8 rounded-2xl shadow-lg border border-black/5 tilt-card">
+                        <span className="material-symbols-outlined text-secondary text-4xl mb-4 block">{s.icon}</span>
+                        <h4 className="text-headline-md text-primary mb-3">{s.title}</h4>
+                        <p className="text-body-md text-on-surface-variant">{s.body}</p>
                       </div>
                     </div>
                   </div>
